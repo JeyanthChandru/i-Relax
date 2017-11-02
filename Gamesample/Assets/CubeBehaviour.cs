@@ -10,7 +10,6 @@ public class CubeBehaviour : MonoBehaviour {
     {
         Destroy(gameObject);
         score += 50;
-
     }
     void Update()
     {

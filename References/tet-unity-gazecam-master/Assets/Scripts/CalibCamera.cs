@@ -179,7 +179,7 @@ public class CalibCamera : MonoBehaviour, IGazeListener, ICalibrationProcessHand
             height = btnPadding + ((btnHeight + btnPadding) * numBtns); //adjust size to num btns
             int y = (int)((Screen.height - height) / 2);
 
-            string boxText = "The Eye Tribe - Unity Sample\n";
+            string boxText = "i-Relax\n";
 
             //add calibration rating if available
             if (GazeManager.Instance.IsCalibrated)
@@ -228,7 +228,7 @@ public class CalibCamera : MonoBehaviour, IGazeListener, ICalibrationProcessHand
 
             if (GazeManager.Instance.IsCalibrated && !GazeManager.Instance.IsCalibrating)
             {
-                String btnText = "Start GazeCam";
+                String btnText = "Start Game";
 
                 if (GUI.Button(new Rect(x + btnPadding, y + btnPadding, btnWidth, btnHeight), btnText))
                 {

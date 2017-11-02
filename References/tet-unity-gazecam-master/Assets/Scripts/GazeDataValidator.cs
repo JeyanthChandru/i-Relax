@@ -37,6 +37,8 @@ namespace Assets.Scripts
         private double _LastValidEyeDistance;
         private double _LastValidEyeAngle;
 
+        // public int gazeEffect;
+
         public GazeDataValidator(int queueLength)
         {
             _Frames = new FixedSizeQueue<GazeData>(queueLength);
@@ -55,6 +57,8 @@ namespace Assets.Scripts
             for (int i = _Frames.Count; --i >= 0; )
             {
                 gd = _Frames.ElementAt(i);
+                // gazeEffect = GazeData.STATE_TRACKING_FAIL;
+                // gazeEffect = frame.State;
 
                 // if no tracking problems, then cache eye data
                 if ((gd.State & GazeData.STATE_TRACKING_FAIL) == 0 && (gd.State & GazeData.STATE_TRACKING_LOST) == 0)
