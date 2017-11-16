@@ -11,8 +11,6 @@ using System.Collections;
 using TETCSharpClient;
 using TETCSharpClient.Data;
 using Assets.Scripts;
-using System;
-using UnityEditor;
 
 /// <summary>
 /// Component attached to 'Main Camera' of '/Scenes/std_scene.unity'.
@@ -26,7 +24,6 @@ public class GazeCamera : MonoBehaviour, IGazeListener
     private double eyesDistance;
     private double baseDist;
     private double depthMod;
-    Point2D gazeCoords;
 
     private Component gazeIndicator;
 
@@ -34,9 +31,6 @@ public class GazeCamera : MonoBehaviour, IGazeListener
 
     private GazeDataValidator gazeUtils;
 
-    public static int score = 0;
-
-    private TextMesh Score;
     void Start()
     {
         //Stay in landscape
@@ -51,8 +45,6 @@ public class GazeCamera : MonoBehaviour, IGazeListener
 
         //register for gaze updates
         GazeManager.Instance.AddGazeListener(this);
-        Score = GameObject.Find("Score").GetComponent<TextMesh>();
-
     }
 
     public void OnGazeUpdate(GazeData gazeData)
@@ -89,7 +81,7 @@ public class GazeCamera : MonoBehaviour, IGazeListener
             cam.transform.eulerAngles = new Vector3(cam.transform.eulerAngles.x, cam.transform.eulerAngles.y, cam.transform.eulerAngles.z + (float)angle);
         }
 
-        gazeCoords = gazeUtils.GetLastValidSmoothedGazeCoordinates();
+        Point2D gazeCoords = gazeUtils.GetLastValidSmoothedGazeCoordinates();
 
         if (null != gazeCoords)
         {
@@ -129,21 +121,9 @@ public class GazeCamera : MonoBehaviour, IGazeListener
                     currentHit.GetComponent<Renderer>().material.color = Color.white;
                 currentHit = hit.collider;
                 currentHit.GetComponent<Renderer>().material.color = Color.red;
-                if(currentHit.GetComponent<Renderer>().material.color == Color.red)
-                {
-                    ParticleSystem ps = GameObject.Find(currentHit.name).AddComponent<ParticleSystem>() as ParticleSystem;
-                    Destroy(GameObject.Find(currentHit.name),1);
-                    score = score + 50;
-                }
-                Score.text = score.ToString();
-                if(score == 450)
-                {
-                    EditorUtility.DisplayDialog("Congratz", "You have scored the maximum","Okay");
-                }
             }
         }
     }
-
 
     void OnGUI()
     {
