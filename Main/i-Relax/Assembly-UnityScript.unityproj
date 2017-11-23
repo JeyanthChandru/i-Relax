@@ -55,7 +55,7 @@
      <Compile Include="Assets\Fx Explosion Pack\Script\MouseOrbit.js" />
      <None Include="Assets\FreeParallax\Readme.txt" />
  <Reference Include="Facebook.Unity.Settings">
- <HintPath>C:/Users/Nirmal Kumar/Documents/Courses_MS_IN_CS/HCI/Main/i-Relax/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
+ <HintPath>C:/Users/Nirmal Kumar/Documents/i-Relax/Main/i-Relax/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
  </Reference>
  <Reference Include="Vuforia.UnityExtensions">
  <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/VuforiaSupport/Managed/Runtime/Vuforia.UnityExtensions.dll</HintPath>
