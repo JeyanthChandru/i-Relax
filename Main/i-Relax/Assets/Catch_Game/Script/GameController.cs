@@ -11,6 +11,7 @@ public class GameController : MonoBehaviour {
     private float maxWidth;
     private bool counting;
     public Text timerText;
+    public Dropdown dropdown;
     public GameObject gameOverText;
     public GameObject restartButton;
     //public GameObject splashScreen;
@@ -19,6 +20,7 @@ public class GameController : MonoBehaviour {
 
     void Start()
     {
+        
         if (cam == null)
         {
             cam = Camera.main;
@@ -28,11 +30,25 @@ public class GameController : MonoBehaviour {
         float ballWidth = balls[0].GetComponent<Renderer>().bounds.extents.x;
         maxWidth = targetWidth.x - ballWidth;
         timerText.text = "TIME LEFT:\n" + Mathf.RoundToInt(timeLeft);
+        //dropdown.Show();
     }
 
     public void StartGame()
     {
+        print(dropdown.value);
+        if (dropdown.value == 1)
+        {
+            timeLeft = 60;
+        }
+        else
+        {
+            timeLeft = 30;
+        }
+        print(timeLeft);
+        timerText.text = "TIME LEFT:\n" + Mathf.RoundToInt(timeLeft);
         print("Game Started");
+        //dropdown.Hide();
+        //dropdown.SetActive(false);
         //splashScreen.SetActive(false);
         startButton.SetActive(false);
         bincontroller.ToggleControl(true);
@@ -50,9 +66,13 @@ public class GameController : MonoBehaviour {
             }
             timerText.text = "TIME LEFT:\n" + Mathf.RoundToInt(timeLeft);
         }
+        if (Input.GetKeyDown("escape"))
+        {
+            print("ESC pressed");
+            Application.Quit();
+        }
+
     }
-
-
     public IEnumerator Spawn()
     {
         yield return new WaitForSeconds(2.0f);
