@@ -16,7 +16,13 @@ public class ExplodeScript : MonoBehaviour {
 	
 		Instantiate (explode,transform.position,Quaternion.identity);
 		score = score + 100;
+		text123.text = "Score:" + score;
+		if (score == 900) {
+			Application.Quit ();
+		
+		}
 	
+
 
 		Destroy (gameObject);
 	
@@ -24,6 +30,6 @@ public class ExplodeScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		text123.text = "Score:" + score;	
+			
 	}
 }
