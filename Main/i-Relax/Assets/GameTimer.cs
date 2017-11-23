@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class GameTimer : MonoBehaviour {
@@ -19,7 +20,7 @@ float timeLeft = 20.0f;
 		if(timeLeft < 0)
 		{
 			
-			Application.Quit();
+			SceneManager.LoadScene ("FeedbackScene");
 		}
 		
 	}

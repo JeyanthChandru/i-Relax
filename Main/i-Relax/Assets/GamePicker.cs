@@ -25,6 +25,13 @@ public class GamePicker : MonoBehaviour {
 	public void Callibrate(){
 		SceneManager.LoadScene ("CallibrationScene");
 	}
+
+	//Logic for what happens when you click Submit Feedback button.
+	public void SubmitFeedBack(){
+	
+	
+	
+	}
 	// Logic for what happens when Skip button is clicked.
 	public void SkipGame(){
 	}

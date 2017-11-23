@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class ExplodeScript : MonoBehaviour {
 	public GameObject explode;
 	// Use this for initialization
@@ -18,8 +19,8 @@ public class ExplodeScript : MonoBehaviour {
 		score = score + 100;
 		text123.text = "Score:" + score;
 		if (score == 900) {
-			Application.Quit ();
-		
+			
+			SceneManager.LoadScene ("FeedbackScene");
 		}
 	
 

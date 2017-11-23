@@ -67,6 +67,7 @@
      <Compile Include="Assets\GamePicker.cs" />
      <Compile Include="Assets\GameTimer.cs" />
      <Compile Include="Assets\NewBehaviourScript.cs" />
+     <Compile Include="Assets\Sight_Game\Script\Changecolor.cs" />
      <None Include="Assets\FreeParallax\Readme.txt" />
  <Reference Include="Facebook.Unity.Settings">
  <HintPath>C:/Users/Nirmal Kumar/Documents/i-Relax/Main/i-Relax/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
