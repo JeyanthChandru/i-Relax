@@ -4,4 +4,13 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/OptionsScene.unity
+    guid: a85caf46b72a7e24384d316584f1c0e8
+  - enabled: 1
+    path: Assets/BreakGameStart.unity
+    guid: fd8b9b263e9a9654591432927d26b1bd
+  - enabled: 1
+    path: Assets/BrickBreaker.unity
+    guid: c90f3f31682d98c4a9121b5b93857a08
