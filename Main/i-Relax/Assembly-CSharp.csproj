@@ -60,6 +60,7 @@
      <Compile Include="Assets\Catch_Game\Script\Restart.cs" />
      <Compile Include="Assets\Catch_Game\Script\Score.cs" />
      <Compile Include="Assets\ExplodeScript.cs" />
+     <Compile Include="Assets\FeedBackSubmitter.cs" />
      <Compile Include="Assets\FreeParallax\Scripts\FreeParallax.cs" />
      <Compile Include="Assets\FreeParallax\Scripts\FreeParallaxDemo.cs" />
      <Compile Include="Assets\Fx Explosion Pack\Script\csLightControl.cs" />
