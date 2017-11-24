@@ -10,6 +10,9 @@ public class Changecolor : MonoBehaviour {
     public Text countdownText;
     public Text ResultText;
 
+    public Text TitleText;
+    public Text HelpText;
+
     public Color startColor;
     public Color mouseOverColor;
     public Renderer rend;
@@ -32,15 +35,24 @@ public class Changecolor : MonoBehaviour {
             {
                 StopCoroutine("LoseTime");
                 countdownText.text = "Times Up!";
+                //TitleText.enabled = true;
+                //HelpText.enabled = true; 
                 ResultText.enabled = true;
                 ResultText.text = "You Won !";
                 playing = false;
             }
         }
+        if (Input.GetKeyDown("escape"))
+        {
+            print("ESC pressed");
+            Application.Quit();
+        }
     }
     public void startGame()
     {
         StartButton.SetActive(false);
+        TitleText.enabled = false;
+        HelpText.enabled = false;
         ResultText.enabled = false;
         playing = true;
     }
@@ -52,6 +64,9 @@ public class Changecolor : MonoBehaviour {
             rend.material.SetColor("_Color", mouseOverColor);
             StopCoroutine("LoseTime");
             //countdownText.text = ("TIME LEFT: " + timeLeft);
+            HelpText.text = "Try looking looking at distant object rather than screen. Look outside to begin";
+            TitleText.enabled = true;
+            HelpText.enabled = true;
             ResultText.enabled = true;
             ResultText.text = "You Lost !  Try Again !";
         }
@@ -59,10 +74,12 @@ public class Changecolor : MonoBehaviour {
     void OnMouseOver()
     {
         //print("over");
-        rend.material.color -= new Color(0.1F, 0, 0) * Time.deltaTime;
+        //rend.material.color -= new Color(0.1F, 0, 0) * Time.deltaTime;
     }
     void OnMouseExit()
     {
+        TitleText.enabled = false;
+        HelpText.enabled = false;
         ResultText.enabled = false;
         if (playing)
         {
