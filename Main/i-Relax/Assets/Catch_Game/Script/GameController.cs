@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour {
 
@@ -91,7 +92,8 @@ public class GameController : MonoBehaviour {
         }
         yield return new WaitForSeconds(2.0f);
         gameOverText.SetActive(true);
-        yield return new WaitForSeconds(2.0f);
-        restartButton.SetActive(true);
+        yield return new WaitForSeconds(3.0f);
+        SceneManager.LoadScene("FeedbackScene");
+        //restartButton.SetActive(true);
     }
 }

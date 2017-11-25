@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Changecolor : MonoBehaviour {
 
@@ -40,6 +41,8 @@ public class Changecolor : MonoBehaviour {
                 ResultText.enabled = true;
                 ResultText.text = "You Won !";
                 playing = false;
+                //MyFunction(3.0f);
+                StartCoroutine(FinishIt());
             }
         }
         if (Input.GetKeyDown("escape"))
@@ -47,6 +50,11 @@ public class Changecolor : MonoBehaviour {
             print("ESC pressed");
             Application.Quit();
         }
+    }
+    public IEnumerator FinishIt()
+    {
+        yield return new WaitForSeconds(3.0f);
+        SceneManager.LoadScene("FeedbackScene");
     }
     public void startGame()
     {
