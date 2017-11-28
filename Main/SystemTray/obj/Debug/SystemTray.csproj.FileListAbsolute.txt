@@ -1,0 +1,54 @@
+c:\users\michal\documents\visual studio 2013\Projects\SystemTray\SystemTray\bin\Debug\SystemTray.exe.config
+c:\users\michal\documents\visual studio 2013\Projects\SystemTray\SystemTray\bin\Debug\SystemTray.exe
+c:\users\michal\documents\visual studio 2013\Projects\SystemTray\SystemTray\bin\Debug\SystemTray.pdb
+c:\users\michal\documents\visual studio 2013\Projects\SystemTray\SystemTray\obj\Debug\SystemTray.csprojResolveAssemblyReference.cache
+c:\users\michal\documents\visual studio 2013\Projects\SystemTray\SystemTray\obj\Debug\SystemTray.Form1.resources
+c:\users\michal\documents\visual studio 2013\Projects\SystemTray\SystemTray\obj\Debug\SystemTray.Properties.Resources.resources
+c:\users\michal\documents\visual studio 2013\Projects\SystemTray\SystemTray\obj\Debug\SystemTray.csproj.GenerateResource.Cache
+c:\users\michal\documents\visual studio 2013\Projects\SystemTray\SystemTray\obj\Debug\SystemTray.exe
+c:\users\michal\documents\visual studio 2013\Projects\SystemTray\SystemTray\obj\Debug\SystemTray.pdb
+C:\Users\jeyan\Downloads\SystemTray\SystemTray\SystemTray\bin\Debug\SystemTray.exe.config
+C:\Users\jeyan\Downloads\SystemTray\SystemTray\SystemTray\obj\Debug\SystemTray.exe
+C:\Users\jeyan\Downloads\SystemTray\SystemTray\SystemTray\obj\Debug\SystemTray.pdb
+C:\Users\jeyan\Downloads\SystemTray\SystemTray\SystemTray\bin\Debug\SystemTray.exe
+C:\Users\jeyan\Downloads\SystemTray\SystemTray\SystemTray\bin\Debug\SystemTray.pdb
+C:\Users\jeyan\Downloads\SystemTray\SystemTray\SystemTray\obj\Debug\SystemTray.csprojResolveAssemblyReference.cache
+C:\Users\jeyan\Downloads\SystemTray\SystemTray\SystemTray\obj\Debug\SystemTray.Form1.resources
+C:\Users\jeyan\Downloads\SystemTray\SystemTray\SystemTray\obj\Debug\SystemTray.Properties.Resources.resources
+C:\Users\jeyan\Downloads\SystemTray\SystemTray\SystemTray\obj\Debug\SystemTray.csproj.GenerateResource.Cache
+C:\Users\jeyan\Desktop\III Sem - Fall 2017\HCI\i-Relax\SystemTray\SystemTray\SystemTray\bin\Debug\SystemTray.exe.config
+C:\Users\jeyan\Desktop\III Sem - Fall 2017\HCI\i-Relax\SystemTray\SystemTray\SystemTray\obj\Debug\SystemTray.exe
+C:\Users\jeyan\Desktop\III Sem - Fall 2017\HCI\i-Relax\SystemTray\SystemTray\SystemTray\obj\Debug\SystemTray.pdb
+C:\Users\jeyan\Desktop\III Sem - Fall 2017\HCI\i-Relax\SystemTray\SystemTray\SystemTray\bin\Debug\SystemTray.exe
+C:\Users\jeyan\Desktop\III Sem - Fall 2017\HCI\i-Relax\SystemTray\SystemTray\SystemTray\bin\Debug\SystemTray.pdb
+C:\Users\jeyan\Desktop\III Sem - Fall 2017\HCI\i-Relax\SystemTray\SystemTray\SystemTray\obj\Debug\SystemTray.csprojResolveAssemblyReference.cache
+C:\Users\jeyan\Desktop\III Sem - Fall 2017\HCI\i-Relax\SystemTray\SystemTray\SystemTray\obj\Debug\SystemTray.Form1.resources
+C:\Users\jeyan\Desktop\III Sem - Fall 2017\HCI\i-Relax\SystemTray\SystemTray\SystemTray\obj\Debug\SystemTray.Properties.Resources.resources
+C:\Users\jeyan\Desktop\III Sem - Fall 2017\HCI\i-Relax\SystemTray\SystemTray\SystemTray\obj\Debug\SystemTray.csproj.GenerateResource.Cache
+C:\Users\jeyan\Desktop\III Sem - Fall 2017\HCI\SystemTray\SystemTray\SystemTray\bin\Debug\SystemTray.exe.config
+C:\Users\jeyan\Desktop\III Sem - Fall 2017\HCI\SystemTray\SystemTray\SystemTray\bin\Debug\SystemTray.exe
+C:\Users\jeyan\Desktop\III Sem - Fall 2017\HCI\SystemTray\SystemTray\SystemTray\bin\Debug\SystemTray.pdb
+C:\Users\jeyan\Desktop\III Sem - Fall 2017\HCI\SystemTray\SystemTray\SystemTray\obj\Debug\SystemTray.csprojResolveAssemblyReference.cache
+C:\Users\jeyan\Desktop\III Sem - Fall 2017\HCI\SystemTray\SystemTray\SystemTray\obj\Debug\SystemTray.Form1.resources
+C:\Users\jeyan\Desktop\III Sem - Fall 2017\HCI\SystemTray\SystemTray\SystemTray\obj\Debug\SystemTray.Properties.Resources.resources
+C:\Users\jeyan\Desktop\III Sem - Fall 2017\HCI\SystemTray\SystemTray\SystemTray\obj\Debug\SystemTray.csproj.GenerateResource.Cache
+C:\Users\jeyan\Desktop\III Sem - Fall 2017\HCI\SystemTray\SystemTray\SystemTray\obj\Debug\SystemTray.csproj.CoreCompileInputs.cache
+C:\Users\jeyan\Desktop\III Sem - Fall 2017\HCI\SystemTray\SystemTray\SystemTray\obj\Debug\SystemTray.exe
+C:\Users\jeyan\Desktop\III Sem - Fall 2017\HCI\SystemTray\SystemTray\SystemTray\obj\Debug\SystemTray.pdb
+C:\Users\jeyan\Desktop\III Sem - Fall 2017\HCI\SystemTray\SystemTray\SystemTray\bin\Debug\SystemTray.exe.manifest
+C:\Users\jeyan\Desktop\III Sem - Fall 2017\HCI\SystemTray\SystemTray\SystemTray\bin\Debug\SystemTray.application
+C:\Users\jeyan\Desktop\III Sem - Fall 2017\HCI\SystemTray\SystemTray\SystemTray\obj\Debug\SystemTray.exe.manifest
+C:\Users\jeyan\Desktop\III Sem - Fall 2017\HCI\SystemTray\SystemTray\SystemTray\obj\Debug\SystemTray.application
+C:\Users\jeyan\Documents\GitHub\i-Relax\Main\SystemTray\bin\Debug\SystemTray.exe.config
+C:\Users\jeyan\Documents\GitHub\i-Relax\Main\SystemTray\bin\Debug\SystemTray.exe.manifest
+C:\Users\jeyan\Documents\GitHub\i-Relax\Main\SystemTray\bin\Debug\SystemTray.application
+C:\Users\jeyan\Documents\GitHub\i-Relax\Main\SystemTray\bin\Debug\SystemTray.exe
+C:\Users\jeyan\Documents\GitHub\i-Relax\Main\SystemTray\bin\Debug\SystemTray.pdb
+C:\Users\jeyan\Documents\GitHub\i-Relax\Main\SystemTray\obj\Debug\SystemTray.Form1.resources
+C:\Users\jeyan\Documents\GitHub\i-Relax\Main\SystemTray\obj\Debug\SystemTray.Properties.Resources.resources
+C:\Users\jeyan\Documents\GitHub\i-Relax\Main\SystemTray\obj\Debug\SystemTray.csproj.GenerateResource.Cache
+C:\Users\jeyan\Documents\GitHub\i-Relax\Main\SystemTray\obj\Debug\SystemTray.csproj.CoreCompileInputs.cache
+C:\Users\jeyan\Documents\GitHub\i-Relax\Main\SystemTray\obj\Debug\SystemTray.exe.manifest
+C:\Users\jeyan\Documents\GitHub\i-Relax\Main\SystemTray\obj\Debug\SystemTray.application
+C:\Users\jeyan\Documents\GitHub\i-Relax\Main\SystemTray\obj\Debug\SystemTray.exe
+C:\Users\jeyan\Documents\GitHub\i-Relax\Main\SystemTray\obj\Debug\SystemTray.pdb
