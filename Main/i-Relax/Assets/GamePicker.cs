@@ -16,21 +16,24 @@ public class GamePicker : MonoBehaviour {
 		System.Random rand = new System.Random ();
 		int randomNumber =rand.Next (1, 3);
 		string pickedScene = name [randomNumber-1];
-        string json = File.ReadAllText(@"C:\Users\Nirmal Kumar\Desktop\app_config.json");
+        string path = @"\\AppConfig\app_config.txt";
+        StreamReader streamReader = new StreamReader(path);
+        //string json = File.ReadAllText(@"C:\Users\Nirmal Kumar\Desktop\app_config.json");
+        string json = streamReader.ReadToEnd();
         dynamic jsonObj = JsonConvert.DeserializeObject(json);
        
         if (randomNumber == 1) {
             jsonObj["current_game"] = "catch_game";
            
             string output = JsonConvert.SerializeObject(jsonObj, Formatting.Indented);
-            File.WriteAllText(@"C:\Users\Nirmal Kumar\Desktop\app_config.json", output);
+            File.WriteAllText(path, output);
         }
         else if (randomNumber == 2)
         {
             jsonObj["current_game"] = "break_game";
             
             string output = JsonConvert.SerializeObject(jsonObj, Newtonsoft.Json.Formatting.Indented);
-            File.WriteAllText(@"C:\Users\Nirmal Kumar\Desktop\app_config.json", output);
+            File.WriteAllText(path, output);
 
         }
 		SceneManager.LoadScene (pickedScene);
