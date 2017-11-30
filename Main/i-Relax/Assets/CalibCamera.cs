@@ -89,6 +89,13 @@ public class CalibCamera : MonoBehaviour, IGazeListener, ICalibrationProcessHand
         gazeUtils.Update(gazeData);
     }
 
+    void OnApplicationQuit()
+    {
+        GazeManager.Instance.CalibrationAbort();
+        GazeManager.Instance.RemoveGazeListener(this);
+        GazeManager.Instance.Deactivate();
+    }
+
     void Update()
     {
         if (!GazeManager.Instance.IsCalibrating)
@@ -236,7 +243,7 @@ public class CalibCamera : MonoBehaviour, IGazeListener, ICalibrationProcessHand
                 if (GUI.Button(new Rect(x + btnPadding, y + btnPadding, btnWidth, btnHeight), btnText))
                 {
                     //this.gamePicker.PickScene();
-                    SceneManager.LoadScene("BreakGameStart");
+                    GamePicker.PickScene();
                     // Application.LoadLevel(1);
                 }
             }
@@ -249,13 +256,6 @@ public class CalibCamera : MonoBehaviour, IGazeListener, ICalibrationProcessHand
         {
             Application.Quit();
         }
-    }
-
-    void OnApplicationQuit()
-    {
-        GazeManager.Instance.CalibrationAbort();
-        GazeManager.Instance.RemoveGazeListener(this);
-        GazeManager.Instance.Deactivate();
     }
 
     public void OnCalibrationStarted()
@@ -310,7 +310,8 @@ public class CalibCamera : MonoBehaviour, IGazeListener, ICalibrationProcessHand
             //Handle on main UI thread
             QueueCallback(new Callback(delegate
             {
-                SceneManager.LoadScene("BreakGameStart");
+                //SceneManager.LoadScene("BreakGameStart");
+                GamePicker.PickScene();
             }));
         }
     }

@@ -29,6 +29,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/SightScene.unity
     guid: fb20f3d71b7d18c48bc5f369033df237
-  - enabled: 1
+  - enabled: 0
     path: Assets/AppScene.unity
     guid: d3574be2ddb972f4d90b551a0344ad7b

@@ -1,0 +1,32 @@
+{
+  "current_game": "sight_game",
+  "break_game": {
+    "good_experience": 2,
+    "average_experience": 0,
+    "bad_experience": 0,
+    "likely_preference": 1,
+    "neutral_preference": 0,
+    "no_preference": 1
+  },
+  "catch_game": {
+    "good_experience": 0,
+    "average_experience": 0,
+    "bad_experience": 0,
+    "likely_preference": 0,
+    "neutral_preference": 0,
+    "no_preference": 0
+  },
+  "sight_game": {
+    "good_experience": 0,
+    "average_experience": 0,
+    "bad_experience": 0,
+    "likely_preference": 0,
+    "neutral_preference": 0,
+    "no_preference": 0
+  },
+  "general": {
+    "yes_help": 2,
+    "no_help": 0,
+    "notsure_help": 0
+  }
+}

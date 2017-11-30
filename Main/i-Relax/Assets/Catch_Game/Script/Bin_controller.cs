@@ -30,6 +30,13 @@ public class Bin_controller : MonoBehaviour, IGazeListener {
 
     }
 
+    public void OnApplicationQuit()
+    {
+        GazeManager.Instance.CalibrationAbort();
+        GazeManager.Instance.RemoveGazeListener(this);
+        GazeManager.Instance.Deactivate();
+    }
+
     public void OnGazeUpdate(GazeData gazeData)
     {
         //Add frame to GazeData cache handler

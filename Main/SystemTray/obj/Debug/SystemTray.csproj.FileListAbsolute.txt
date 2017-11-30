@@ -44,6 +44,9 @@ C:\Users\jeyan\Documents\GitHub\i-Relax\Main\SystemTray\bin\Debug\SystemTray.exe
 C:\Users\jeyan\Documents\GitHub\i-Relax\Main\SystemTray\bin\Debug\SystemTray.application
 C:\Users\jeyan\Documents\GitHub\i-Relax\Main\SystemTray\bin\Debug\SystemTray.exe
 C:\Users\jeyan\Documents\GitHub\i-Relax\Main\SystemTray\bin\Debug\SystemTray.pdb
+C:\Users\jeyan\Documents\GitHub\i-Relax\Main\SystemTray\bin\Debug\EyeTribe.ClientSdk.dll
+C:\Users\jeyan\Documents\GitHub\i-Relax\Main\SystemTray\bin\Debug\Newtonsoft.Json.dll
+C:\Users\jeyan\Documents\GitHub\i-Relax\Main\SystemTray\bin\Debug\Newtonsoft.Json.xml
 C:\Users\jeyan\Documents\GitHub\i-Relax\Main\SystemTray\obj\Debug\SystemTray.Form1.resources
 C:\Users\jeyan\Documents\GitHub\i-Relax\Main\SystemTray\obj\Debug\SystemTray.Properties.Resources.resources
 C:\Users\jeyan\Documents\GitHub\i-Relax\Main\SystemTray\obj\Debug\SystemTray.csproj.GenerateResource.Cache

@@ -5,22 +5,28 @@ using System;
 using UnityEngine.UI;
 using Newtonsoft.Json;
 using System.IO;
+using UnityEngine.SceneManagement;
+using TETCSharpClient;
+using TETCSharpClient.Data;
+//using UnityEditor;
 
 
 public class FeedBackSubmitter : MonoBehaviour {
 	public Dropdown rate_exp;
 	public Dropdown  help_relax;
 	public Dropdown prefer_future;
-	public void SubmitFeedback(){
-		string rating = rate_exp.captionText.text;
+
+    public void SubmitFeedback(){
+        string rating = rate_exp.captionText.text;
 		string help = help_relax.captionText.text;
 		string preference = prefer_future.captionText.text;
-        string path = System.IO.Directory.GetCurrentDirectory().ToString() +  @"\\AppConfig\app_config.json";
+        string path = "AppConfig\\app_config.json";
         print(path);
         string json = File.ReadAllText(path);
         //print(json);
         dynamic jsonObj = JsonConvert.DeserializeObject(json);
         string curr_game = Convert.ToString(jsonObj["current_game"]);
+
         jsonObj["current_game"]="";
         if (rating.Equals("Good"))
         {
@@ -60,10 +66,13 @@ public class FeedBackSubmitter : MonoBehaviour {
             jsonObj[curr_game]["no_preference"] = Convert.ToInt32(jsonObj[curr_game]["no_preference"]) + 1;
         }
         string output = JsonConvert.SerializeObject(jsonObj, Formatting.Indented);
-        File.WriteAllText(@"C:\Users\Nirmal Kumar\Desktop\app_config.json", output);
+        File.WriteAllText("AppConfig\\app_config.json", output);
+
+        //EditorApplication.isPlaying = false;
+        GazeManager.Instance.CalibrationAbort();
+        GazeManager.Instance.Deactivate();
         Application.Quit();
-
-
-
+        //SceneManager.LoadScene("OptionsScene");
+        //EditorApplication.Exit(0);
     }
 }

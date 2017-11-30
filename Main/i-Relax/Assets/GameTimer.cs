@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TETCSharpClient;
+using TETCSharpClient.Data;
 
 
 public class GameTimer : MonoBehaviour {
@@ -19,8 +21,9 @@ float timeLeft = 20.0f;
 		Timer.text = "Time Left:"+(int)timeLeft;
 		if(timeLeft < 0)
 		{
-			
-			SceneManager.LoadScene ("FeedbackScene");
+            GazeManager.Instance.CalibrationAbort();
+            GazeManager.Instance.Deactivate();
+            SceneManager.LoadScene ("FeedbackScene");
 		}
 		
 	}

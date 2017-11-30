@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TETCSharpClient;
+using TETCSharpClient.Data;
 
 public class GameController : MonoBehaviour {
 
@@ -56,6 +58,12 @@ public class GameController : MonoBehaviour {
         StartCoroutine(Spawn());
     }
 
+    void OnApplicationQuit()
+    {
+        GazeManager.Instance.CalibrationAbort();
+        GazeManager.Instance.Deactivate();
+    }
+
     void FixedUpdate()
     {
         if (counting)
@@ -93,6 +101,8 @@ public class GameController : MonoBehaviour {
         yield return new WaitForSeconds(2.0f);
         gameOverText.SetActive(true);
         yield return new WaitForSeconds(3.0f);
+        GazeManager.Instance.CalibrationAbort();
+        GazeManager.Instance.Deactivate();
         SceneManager.LoadScene("FeedbackScene");
         //restartButton.SetActive(true);
     }

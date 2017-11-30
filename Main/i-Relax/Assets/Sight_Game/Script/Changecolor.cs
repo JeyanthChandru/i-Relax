@@ -46,6 +46,13 @@ public class Changecolor : MonoBehaviour, IGazeListener {
         GazeManager.Instance.AddGazeListener(this);
     }
 
+    void OnApplicationQuit()
+    {
+        GazeManager.Instance.CalibrationAbort();
+        GazeManager.Instance.RemoveGazeListener(this);
+        GazeManager.Instance.Deactivate();
+    }
+
     private void checkGazeCollision(Vector3 screenPoint)
     {
         Ray collisionRay = cam.ScreenPointToRay(screenPoint);
@@ -72,7 +79,6 @@ public class Changecolor : MonoBehaviour, IGazeListener {
         Point2D gazeCoords = gazeUtils.GetLastValidSmoothedGazeCoordinates();
         if (mouseOver == false)
         {
-            countdownText.text = ("TIME LEFT: " + timeLeft);
             if (timeLeft <= 0)
             {
                 StopCoroutine("LoseTime");
@@ -106,9 +112,13 @@ public class Changecolor : MonoBehaviour, IGazeListener {
         }
 
     }
+
     public IEnumerator FinishIt()
     {
         yield return new WaitForSeconds(3.0f);
+        GazeManager.Instance.CalibrationAbort();
+        GazeManager.Instance.RemoveGazeListener(this);
+        GazeManager.Instance.Deactivate();
         SceneManager.LoadScene("FeedbackScene");
     }
     public void startGame()
@@ -142,6 +152,7 @@ public class Changecolor : MonoBehaviour, IGazeListener {
             TitleText.enabled = false;
             HelpText.enabled = false;
             ResultText.enabled = false;
+            countdownText.text = "You are doing Great, Keep it up....";
             timeLeft = fixedtime;
             mouseOver = false;
             rend.material.SetColor("_Color", startColor);

@@ -9,17 +9,17 @@ using Newtonsoft.Json;
 public class GamePicker : MonoBehaviour {
 
 	// Logic for what happens when Callibrate button is clicked.
-	public void PickScene(){
+	public static void PickScene(){
 		string[] name = new string[] {
 		"CatchScene",
-			"BreakGameStart"};
+			"BreakGameStart","SightScene"};
 		System.Random rand = new System.Random ();
-		int randomNumber =rand.Next (1, 3);
+		int randomNumber =rand.Next (1, 4);
 		string pickedScene = name [randomNumber-1];
-        string path = @"\\AppConfig\app_config.json";
-        StreamReader streamReader = new StreamReader(path);
-        //string json = File.ReadAllText(@"C:\Users\Nirmal Kumar\Desktop\app_config.json");
-        string json = streamReader.ReadToEnd();
+        string path = "AppConfig\\app_config.json";
+        //StreamReader streamReader = new StreamReader(path);
+        string json = File.ReadAllText(path);
+        //string json = streamReader.ReadToEnd();
         dynamic jsonObj = JsonConvert.DeserializeObject(json);
        
         if (randomNumber == 1) {
@@ -36,7 +36,15 @@ public class GamePicker : MonoBehaviour {
             File.WriteAllText(path, output);
 
         }
+        else
+        {
+            jsonObj["current_game"] = "sight_game";
+
+            string output = JsonConvert.SerializeObject(jsonObj, Newtonsoft.Json.Formatting.Indented);
+            File.WriteAllText(path, output);
+        }
 		SceneManager.LoadScene (pickedScene);
+        
 	
 	
 	

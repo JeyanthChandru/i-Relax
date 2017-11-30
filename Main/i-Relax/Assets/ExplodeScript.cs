@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 using TETCSharpClient;
 using TETCSharpClient.Data;
 using Assets.Scripts;
+
 public class ExplodeScript : MonoBehaviour, IGazeListener {
 	public GameObject explode;
 	// Use this for initialization
@@ -31,6 +32,13 @@ public class ExplodeScript : MonoBehaviour, IGazeListener {
     void OnDestroy()
     {
         score = score + 100;
+    }
+
+    void OnApplicationQuit()
+    {
+        GazeManager.Instance.CalibrationAbort();
+        GazeManager.Instance.RemoveGazeListener(this);
+        GazeManager.Instance.Deactivate();
     }
 
     public void OnGazeUpdate(GazeData gazeData)
@@ -63,6 +71,9 @@ public class ExplodeScript : MonoBehaviour, IGazeListener {
         text123.text = "Score:" + score;
         if (score == 900)
         {
+            GazeManager.Instance.CalibrationAbort();
+            GazeManager.Instance.RemoveGazeListener(this);
+            GazeManager.Instance.Deactivate();
             SceneManager.LoadScene("FeedbackScene");
         }
     }
