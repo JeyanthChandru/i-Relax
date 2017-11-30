@@ -3,8 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TETCSharpClient;
+using TETCSharpClient.Data;
+using Assets.Scripts;
 
-public class Changecolor : MonoBehaviour {
+public class Changecolor : MonoBehaviour, IGazeListener {
+    private Camera cam;
 
     public int fixedtime = 30;
     public int timeLeft = 30;
@@ -20,15 +24,52 @@ public class Changecolor : MonoBehaviour {
     //public GameObject StatusText;
     public GameObject StartButton;
     //public GameObject ResultTextGO;
+    private GazeDataValidator gazeUtils;
+    private Component gazeIndicator;
+    private Collider currentHit;
+
+
+
     bool mouseOver = false;
     bool playing = false;
     void Start()
     {
+        if (cam == null)
+        {
+            cam = Camera.main;
+        }
         rend = GetComponent<Renderer>();
         StartButton.SetActive(true);
+        gazeUtils = new GazeDataValidator(30);
+        gazeIndicator = cam.transform.GetChild(0);
+
+        GazeManager.Instance.AddGazeListener(this);
     }
+
+    private void checkGazeCollision(Vector3 screenPoint)
+    {
+        Ray collisionRay = cam.ScreenPointToRay(screenPoint);
+        RaycastHit hit;
+        if (Physics.Raycast(collisionRay, out hit))
+        {
+            if (hit.collider.name == "Cube")
+                mouseEnter();    
+        }
+        else
+        {
+            mouseExit();
+        }
+    }
+
+    public void OnGazeUpdate(GazeData gazeData)
+    {
+        //Add frame to GazeData cache handler
+        gazeUtils.Update(gazeData);
+    }
+
     void Update()
     {
+        Point2D gazeCoords = gazeUtils.GetLastValidSmoothedGazeCoordinates();
         if (mouseOver == false)
         {
             countdownText.text = ("TIME LEFT: " + timeLeft);
@@ -42,14 +83,28 @@ public class Changecolor : MonoBehaviour {
                 ResultText.text = "You Won !";
                 playing = false;
                 //MyFunction(3.0f);
-                StartCoroutine(FinishIt());
+                StartCoroutine("FinishIt");
             }
         }
-        if (Input.GetKeyDown("escape"))
+        if (null != gazeCoords)
         {
-            print("ESC pressed");
+            //map gaze indicator
+            Point2D gp = UnityGazeUtils.getGazeCoordsToUnityWindowCoords(gazeCoords);
+
+            Vector3 screenPoint = new Vector3((float)gp.X, (float)gp.Y, cam.nearClipPlane + .1f);
+
+            Vector3 planeCoord = cam.ScreenToWorldPoint(screenPoint);
+            gazeIndicator.transform.position = planeCoord;
+
+            //handle collision detection
+            checkGazeCollision(screenPoint);
+        }
+
+        if (Input.GetKey(KeyCode.Escape))
+        {
             Application.Quit();
         }
+
     }
     public IEnumerator FinishIt()
     {
@@ -64,7 +119,7 @@ public class Changecolor : MonoBehaviour {
         ResultText.enabled = false;
         playing = true;
     }
-    void OnMouseEnter()
+    void mouseEnter()
     {
         if (playing)
         {
@@ -79,18 +134,14 @@ public class Changecolor : MonoBehaviour {
             ResultText.text = "You Lost !  Try Again !";
         }
     }
-    void OnMouseOver()
+
+    void mouseExit()
     {
-        //print("over");
-        //rend.material.color -= new Color(0.1F, 0, 0) * Time.deltaTime;
-    }
-    void OnMouseExit()
-    {
-        TitleText.enabled = false;
-        HelpText.enabled = false;
-        ResultText.enabled = false;
         if (playing)
         {
+            TitleText.enabled = false;
+            HelpText.enabled = false;
+            ResultText.enabled = false;
             timeLeft = fixedtime;
             mouseOver = false;
             rend.material.SetColor("_Color", startColor);
@@ -103,8 +154,9 @@ public class Changecolor : MonoBehaviour {
     {
         while (true)
         {
-            yield return new WaitForSeconds(1);
-            timeLeft--;
+            yield return new WaitForSeconds(3);
+            timeLeft = timeLeft - 1;
+            print(timeLeft);
         }
     }
 }

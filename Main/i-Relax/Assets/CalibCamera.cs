@@ -236,7 +236,7 @@ public class CalibCamera : MonoBehaviour, IGazeListener, ICalibrationProcessHand
                 if (GUI.Button(new Rect(x + btnPadding, y + btnPadding, btnWidth, btnHeight), btnText))
                 {
                     //this.gamePicker.PickScene();
-                    SceneManager.LoadScene("BreakGameStart");
+                    SceneManager.LoadScene("SightScene");
                     // Application.LoadLevel(1);
                 }
             }
@@ -310,7 +310,7 @@ public class CalibCamera : MonoBehaviour, IGazeListener, ICalibrationProcessHand
             //Handle on main UI thread
             QueueCallback(new Callback(delegate
             {
-                SceneManager.LoadScene("BreakGameStart");
+                SceneManager.LoadScene("SightScene");
             }));
         }
     }
