@@ -17,9 +17,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/CatchScene.unity
     guid: 8d3e94d9ce9db5f4e8fba32ceac96487
-  - enabled: 1
-    path: Assets/CallibrationScene.unity
-    guid: fbf99c0e411dd1a42b5b691f2985a90b
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/FeedbackScene.unity
     guid: 5a989754c24d78e48a6ffd9bb6fcb22d
+  - enabled: 1
+    path: Assets/CallibrationScene.unity
+    guid: 3e87573d114aed04facb55a222a78b22
+  - enabled: 1
+    path: Assets/SightScene.unity
+    guid: fb20f3d71b7d18c48bc5f369033df237
+  - enabled: 1
+    path: Assets/AppScene.unity
+    guid: d3574be2ddb972f4d90b551a0344ad7b

@@ -12,6 +12,7 @@ using TETCSharpClient;
 using TETCSharpClient.Data;
 using Assets.Scripts;
 using System;
+using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 
 /// <summary>
@@ -234,7 +235,8 @@ public class CalibCamera : MonoBehaviour, IGazeListener, ICalibrationProcessHand
 
                 if (GUI.Button(new Rect(x + btnPadding, y + btnPadding, btnWidth, btnHeight), btnText))
                 {
-                    gamePicker.PickScene();
+                    //this.gamePicker.PickScene();
+                    SceneManager.LoadScene("BreakGameStart");
                     // Application.LoadLevel(1);
                 }
             }
@@ -308,7 +310,7 @@ public class CalibCamera : MonoBehaviour, IGazeListener, ICalibrationProcessHand
             //Handle on main UI thread
             QueueCallback(new Callback(delegate
             {
-                Application.LoadLevel(1);
+                SceneManager.LoadScene("BreakGameStart");
             }));
         }
     }

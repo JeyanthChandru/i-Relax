@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/BrickBreaker.unity
+- path: Assets/FeedbackScene.unity
   isLoaded: 1
   isActive: 1

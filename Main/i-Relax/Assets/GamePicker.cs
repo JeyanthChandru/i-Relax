@@ -16,7 +16,7 @@ public class GamePicker : MonoBehaviour {
 		System.Random rand = new System.Random ();
 		int randomNumber =rand.Next (1, 3);
 		string pickedScene = name [randomNumber-1];
-        string path = @"\\AppConfig\app_config.txt";
+        string path = @"\\AppConfig\app_config.json";
         StreamReader streamReader = new StreamReader(path);
         //string json = File.ReadAllText(@"C:\Users\Nirmal Kumar\Desktop\app_config.json");
         string json = streamReader.ReadToEnd();

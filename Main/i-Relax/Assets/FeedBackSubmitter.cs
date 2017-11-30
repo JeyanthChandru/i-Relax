@@ -15,8 +15,10 @@ public class FeedBackSubmitter : MonoBehaviour {
 		string rating = rate_exp.captionText.text;
 		string help = help_relax.captionText.text;
 		string preference = prefer_future.captionText.text;
-
-        string json = File.ReadAllText(@"C:\Users\Nirmal Kumar\Desktop\app_config.json");
+        string path = System.IO.Directory.GetCurrentDirectory().ToString() +  @"\\AppConfig\app_config.json";
+        print(path);
+        string json = File.ReadAllText(path);
+        //print(json);
         dynamic jsonObj = JsonConvert.DeserializeObject(json);
         string curr_game = Convert.ToString(jsonObj["current_game"]);
         jsonObj["current_game"]="";
