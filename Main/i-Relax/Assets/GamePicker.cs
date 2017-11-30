@@ -56,6 +56,7 @@ public class GamePicker : MonoBehaviour {
 	}
 	// Logic for what happens when Skip button is clicked.
 	public void SkipGame(){
+        Application.Quit();
 	}
 
 	//Logic for what happens when Settings button is clicked.
